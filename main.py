@@ -12,10 +12,11 @@ def get_book_text(filepath):
     
 
 def main():
-    file_path = sys.argv[1]
     if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
+
+    file_path = sys.argv[1]
     count_w = count_words(file_path)
     count_c = count_characters(file_path)
     print("============ BOOKBOT ============")
@@ -26,5 +27,5 @@ def main():
     for char, count in sorted(count_c.items(), key=lambda x: x[1], reverse=True):
         print(f"{char}: {count}")
     print("============= END ===============")
-
+    sys.exit(0)
 main()
